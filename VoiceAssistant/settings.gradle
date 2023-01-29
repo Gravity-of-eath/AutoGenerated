@@ -1,0 +1,23 @@
+//pluginManagement {
+//    repositories {
+//        gradlePluginPortal()
+//        google()
+//        mavenCentral()
+//    }
+//}
+//dependencyResolutionManagement {
+//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+//    repositories {
+//        google()
+//        mavenCentral()
+//    }
+//}
+rootProject.name = "VoiceAssistant"
+include ':app'
+include ':compiler'
+
+project(':compiler').projectDir = new File(settingsDir, '../compiler')
+
+include ':baseProject'
+project(':baseProject').projectDir = new File(settingsDir, '../apps')
+include ':baseProject:base'
